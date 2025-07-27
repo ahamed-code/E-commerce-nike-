@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Management</title>
+  <script src="../html/assets/script/exist.js"></script>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Bootstrap CSS -->
+  <link
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+
+  <!-- Font Awesome for icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-pO7Iu6ZZwrho0v4nU5RbRr6zOvEjG2gf/FbhAwRlj8EJPCqElVvdTT5zDhN0V2nCjaUbC3ZBL1z1ijUJ/FwWwg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/eweb.css" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="images/icons8-nike-96.png" />
+</head>
+
+<body style="font-family: 'Poppins', sans-serif">
+  <!-- Header -->
+  <header class="bg-dark text-white text-center py-3">
+    <h1><i class="fa-brands fa-nike"></i> NIKE✓</h1>
+    <h3>Just Do It✓</h3>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#">Admin: Basheer Ahamed</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a class="nav-link" href="https://en.wikipedia.org/wiki/Nike,_Inc.">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="https://about.nike.com/en">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="https://stockanalysis.com/stocks/nke/revenue/">Accounts</a></li>
+            <li class="nav-item"><a class="nav-link" href="https://www.nike.com/help/a/nike-contact-directory">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Section -->
+  <main class="container py-5">
+    <h2 class="text-center mb-4">🛍️ Product Management</h2>
+
+    <!-- Add Product Form -->
+    <section id="add-product" class="mb-5">
+      <h4 class="mb-3">Add Product</h4>
+      <form id="add-product-form" class="p-4 border rounded shadow-sm">
+        <div class="form-group">
+          <label for="productName"><i class="fa fa-tag"></i> Product Name</label>
+          <input type="text" class="form-control" id="productName" placeholder="Enter product name" required />
+        </div>
+        <div class="form-group">
+          <label for="productPrice"><i class="fa fa-rupee-sign"></i> Product Price</label>
+          <input type="number" class="form-control" id="productPrice" placeholder="Enter product price" required />
+        </div>
+        <div class="form-group">
+          <label for="productImage"><i class="fa fa-image"></i> Product Image URL</label>
+          <input type="text" class="form-control" id="productImage" placeholder="Enter image URL" required />
+        </div>
+        <button type="submit" class="btn btn-dark btn-block"><i class="fa fa-plus-circle"></i> Add Product</button>
+      </form>
+    </section>
+    
+
+    <!-- Product Grid -->
+    <section id="existing-products">
+      <h4 class="mb-4">Existing Products</h4>
+      <div class="row" id="product-list">
+        <!-- Dynamically loaded cards or static samples go here -->
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-3">
+    <p>&copy; 2024 Nike Store. All rights reserved.</p>
+  </footer>
+
+  <!-- Edit Product Modal -->
+  <div class="modal fade" id="editProductModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content rounded">
+        <div class="modal-header bg-dark text-white">
+          <h5 class="modal-title">Edit Product</h5>
+          <button type="button" class="close text-white" data-dismiss="modal">
+            <span>&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="edit-product-form">
+            <input type="hidden" id="editProductId" />
+            <div class="form-group">
+              <label for="editProductName">Product Name</label>
+              <input type="text" class="form-control" id="editProductName" required />
+            </div>
+            <div class="form-group">
+              <label for="editProductPrice">Product Price</label>
+              <input type="number" class="form-control" id="editProductPrice" required />
+            </div>
+            <div class="form-group">
+              <label for="editProductImage">Product Image URL</label>
+              <input type="text" class="form-control" id="editProductImage" required />
+            </div>
+          </form>
+        </div>
+        
+        <div class="modal-footer">
+          <button class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button class="btn btn-primary" onclick="saveChanges()">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  <!-- Bootstrap JS & jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom JS -->
+  <script src="js/edit.js"></script>
+</body>
+</html>

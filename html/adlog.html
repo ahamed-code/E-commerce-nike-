@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Login</title>
+
+  <!-- Link to external CSS -->
+  <link rel="stylesheet" href="../html/assets/css/log.css" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="../html/assets/images/icons8-nike-96 (2).png" />
+
+  <!-- External JS -->
+  <script src="../html/assets/script/script.js" defer></script>
+</head>
+<body>
+  <div class="login-container">
+    <div class="form-box">
+      <h2>Admin Login</h2>
+      <form action="admin.html" method="post" onsubmit="return validateForm()">
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="text" id="email" name="email" required />
+        </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required />
+        </div>
+        <input type="submit" value="Login" />
+        <div id="error-message" class="error-message"></div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
